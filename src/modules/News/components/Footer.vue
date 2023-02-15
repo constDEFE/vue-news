@@ -39,17 +39,17 @@
 .pagination {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 3rem 0;
+  gap: 8px;
+  margin: 70px 0;
 
   label {
-    width: 2rem;
-    height: 2rem;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid $dark-border-color;
-    border-radius: 0.2rem;
+    border-radius: 5px;
     cursor: pointer;
 
     &:hover {

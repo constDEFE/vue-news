@@ -338,6 +338,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"calendar-data-generate@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "calendar-data-generate@npm:1.0.3"
+  checksum: 84847ef83e7e37260e0e1df428edd9a9923c14feafccd2464eb21a2f979bf74f6bd072312e6a28c72dee696087515b5e29a17457ab714ee0a7f2760ef669adf8
+  languageName: node
+  linkType: hard
+
 "chokidar@npm:>=3.0.0 <4.0.0":
   version: 3.5.3
   resolution: "chokidar@npm:3.5.3"
@@ -401,6 +408,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js@npm:^3.15.2":
+  version: 3.28.0
+  resolution: "core-js@npm:3.28.0"
+  checksum: 3155fd0ec16d0089106b145e9595280a4ea4bde0d7ff26aa14364cd4f1c203baf6620c3025acd284f363d08b9f21104101692766ca9a36ffeee7307bdf3e1881
+  languageName: node
+  linkType: hard
+
 "core-js@npm:^3.26.0":
   version: 3.27.2
   resolution: "core-js@npm:3.27.2"
@@ -412,6 +426,22 @@ __metadata:
   version: 3.1.1
   resolution: "csstype@npm:3.1.1"
   checksum: 1f7b4f5fdd955b7444b18ebdddf3f5c699159f13e9cf8ac9027ae4a60ae226aef9bbb14a6e12ca7dba3358b007cee6354b116e720262867c398de6c955ea451d
+  languageName: node
+  linkType: hard
+
+"date-fns-tz@npm:^1.1.4":
+  version: 1.3.8
+  resolution: "date-fns-tz@npm:1.3.8"
+  peerDependencies:
+    date-fns: ">=2.0.0"
+  checksum: dbf17cb88de7c7b71a9f86b815ac62ebdbf725c030e78d2421309456b5001a85284a5b6763f4af0ba660183f12e876c165e725a0723f642edb7846407db03133
+  languageName: node
+  linkType: hard
+
+"date-fns@npm:^2.22.1":
+  version: 2.29.3
+  resolution: "date-fns@npm:2.29.3"
+  checksum: e01cf5b62af04e05dfff921bb9c9933310ed0e1ae9a81eb8653452e64dc841acf7f6e01e1a5ae5644d0337e9a7f936175fd2cb6819dc122fdd9c5e86c56be484
   languageName: node
   linkType: hard
 
@@ -971,6 +1001,13 @@ __metadata:
   version: 2.0.0
   resolution: "isexe@npm:2.0.0"
   checksum: 26bf6c5480dda5161c820c5b5c751ae1e766c587b1f951ea3fcfc973bafb7831ae5b54a31a69bd670220e42e99ec154475025a468eae58ea262f813fdc8d1c62
+  languageName: node
+  linkType: hard
+
+"lodash@npm:^4.17.21":
+  version: 4.17.21
+  resolution: "lodash@npm:4.17.21"
+  checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
   languageName: node
   linkType: hard
 
@@ -1598,6 +1635,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"v-calendar@npm:^2.4.1":
+  version: 2.4.1
+  resolution: "v-calendar@npm:2.4.1"
+  dependencies:
+    core-js: ^3.15.2
+    date-fns: ^2.22.1
+    date-fns-tz: ^1.1.4
+    lodash: ^4.17.21
+  peerDependencies:
+    "@popperjs/core": ^2.4.0
+    vue: ^2.5.18
+  checksum: aaee401bb2f44e6285df4fcb94beb4ef8f7fc5587cfddefa8026761cb95284c8ee08e188262c3791f9327f156e52bd9a463d63995c07c596cc74eff094318ee7
+  languageName: node
+  linkType: hard
+
 "vite@npm:^3.0.2":
   version: 3.2.5
   resolution: "vite@npm:3.2.5"
@@ -1636,6 +1688,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"vue-datepicker-ui@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "vue-datepicker-ui@npm:2.3.0"
+  dependencies:
+    calendar-data-generate: ^1.0.3
+  peerDependencies:
+    vue: ^2.6.14
+  checksum: 8050b4cee49ae1a08fb56e390d87694ba9e0d75dfe7f02adaf31821cb94d1517b4868224ca9ff98b7508fd46669d30c4ffa408df817132f1bd65ddd8bf34fad5
+  languageName: node
+  linkType: hard
+
 "vue-news@workspace:.":
   version: 0.0.0-use.local
   resolution: "vue-news@workspace:."
@@ -1644,8 +1707,10 @@ __metadata:
     "@vitejs/plugin-vue2": ^1.1.2
     sass: ^1.58.0
     terser: ^5.14.2
+    v-calendar: ^2.4.1
     vite: ^3.0.2
     vue: ^2.7.7
+    vue-datepicker-ui: ^2.3.0
   languageName: unknown
   linkType: soft
 

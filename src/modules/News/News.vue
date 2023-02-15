@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <Header @sort="handleSort" />
-    <Main :news="news" />
+    <Header />
+    <Main :news="filteredNews" />
     <Footer />
   </div>
 </template>
@@ -11,20 +11,38 @@ import Header from "./components/Header.vue";
 import Main from "./components/Main.vue";
 import Footer from "./components/Footer.vue";
 import news from "../../JSON/news.json";
+import { eventBus } from "../../main";
 
 export default {
   data: () => ({
     news,
-    sort: "desc",
+    date: null,
+    searchQuery: "",
   }),
-  methods: {
-    handleSort() {
-      if (this.sort === "desc") {
-        this.news.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-        this.sort = "asc";
+  computed: {
+    filteredNews() {
+      if (this.date && this.searchQuery) {
+        return this.news.filter((item) => {
+          const itemDate = new Date(item.date);
+
+          return (
+            itemDate < this.date.end &&
+            itemDate > this.date.start &&
+            item.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+          );
+        });
+      } else if (this.date) {
+        return this.news.filter((item) => {
+          const itemDate = new Date(item.date);
+
+          return itemDate < this.date.end && itemDate > this.date.start;
+        });
+      } else if (this.searchQuery) {
+        return this.news.filter((item) =>
+          item.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+        );
       } else {
-        this.news.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-        this.sort = "desc";
+        return this.news;
       }
     },
   },
@@ -32,6 +50,10 @@ export default {
     Header,
     Main,
     Footer,
+  },
+  created() {
+    eventBus.$on("dateChange", (event) => (this.date = event));
+    eventBus.$on("searchChange", (event) => (this.searchQuery = event));
   },
 };
 </script>
@@ -44,14 +66,14 @@ export default {
   max-width: 1500px;
   width: 100%;
   background: #fff;
-  padding: 1rem;
+  padding: 16px;
 
   @media (min-width: 560px) {
-    padding: 1.5rem 2rem;
+    padding: 24px 32px;
   }
 
   @media (min-width: 960px) {
-    padding: 3rem 5rem;
+    padding: 48px 80px;
   }
 }
 </style>

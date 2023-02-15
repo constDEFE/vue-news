@@ -1,24 +1,21 @@
 <template>
   <header>
-    <h2>Latest News</h2>
-    <button @click="handleSort">
-      <Calendar />
-      Sort by date
-    </button>
+    <Search />
+    <div class="row">
+      <h2>Latest News</h2>
+      <DatePicker />
+    </div>
   </header>
 </template>
 
 <script>
-import Calendar from "../../../ui/icons/Calendar.vue";
+import DatePicker from "./DatePicker.vue";
+import Search from "./Search.vue";
 
 export default {
   components: {
-    Calendar,
-  },
-  methods: {
-    handleSort() {
-      this.$emit("sort");
-    },
+    DatePicker,
+    Search,
   },
 };
 </script>
@@ -26,11 +23,11 @@ export default {
 <style lang="scss" scoped>
 @import "../../../assets/variables";
 
-header {
+.row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 16px 0;
 
   button {
     background: $accent;
@@ -39,50 +36,56 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
+    gap: 16px;
+    padding: 8px 16px;
     cursor: pointer;
+    font-weight: 500;
 
     &:hover {
       opacity: 0.8;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
     }
   }
 
   @media (min-width: 560px) {
     h2 {
-      font-size: 1.75rem;
+      font-size: 28px;
     }
 
     button {
-      padding: 0.6rem 1.25rem;
+      padding: 10px 20px;
     }
   }
 
   @media (min-width: 768px) {
     h2 {
-      font-size: 2rem;
+      font-size: 32px;
     }
 
     button {
-      padding: 0.75rem 1.5rem;
+      padding: 12px 24px;
     }
   }
   @media (min-width: 960px) {
     h2 {
-      font-size: 2.5rem;
+      font-size: 40px;
     }
 
-    padding: 2rem 0;
+    padding: 32px 0;
   }
 
   @media (min-width: 1280px) {
     h2 {
-      font-size: 3.5rem;
+      font-size: 56px;
     }
 
     button {
-      padding: 1rem 1.75rem;
-      font-size: 1rem;
+      padding: 16px 28px;
+      font-size: 16px;
     }
   }
 }
