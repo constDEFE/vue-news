@@ -8,8 +8,7 @@
   },
   "dependencies": {
     "v-calendar": "^2.4.1",
-    "vue": "^2.7.7",
-    "vue-datepicker-ui": "^2.3.0"
+    "vue": "^2.7.7"
   },
   "devDependencies": {
     "@vitejs/plugin-legacy": "^2.0.0",

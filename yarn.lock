@@ -338,13 +338,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"calendar-data-generate@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "calendar-data-generate@npm:1.0.3"
-  checksum: 84847ef83e7e37260e0e1df428edd9a9923c14feafccd2464eb21a2f979bf74f6bd072312e6a28c72dee696087515b5e29a17457ab714ee0a7f2760ef669adf8
-  languageName: node
-  linkType: hard
-
 "chokidar@npm:>=3.0.0 <4.0.0":
   version: 3.5.3
   resolution: "chokidar@npm:3.5.3"
@@ -1688,17 +1681,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-datepicker-ui@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "vue-datepicker-ui@npm:2.3.0"
-  dependencies:
-    calendar-data-generate: ^1.0.3
-  peerDependencies:
-    vue: ^2.6.14
-  checksum: 8050b4cee49ae1a08fb56e390d87694ba9e0d75dfe7f02adaf31821cb94d1517b4868224ca9ff98b7508fd46669d30c4ffa408df817132f1bd65ddd8bf34fad5
-  languageName: node
-  linkType: hard
-
 "vue-news@workspace:.":
   version: 0.0.0-use.local
   resolution: "vue-news@workspace:."
@@ -1710,7 +1692,6 @@ __metadata:
     v-calendar: ^2.4.1
     vite: ^3.0.2
     vue: ^2.7.7
-    vue-datepicker-ui: ^2.3.0
   languageName: unknown
   linkType: soft
 
